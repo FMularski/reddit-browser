@@ -9,8 +9,8 @@ reddit = praw.Reddit(client_id=client_id, client_secret=client_secret, username=
 
 subreddit = reddit.subreddit('DragonBallLegends')
 
-hot_dblegends = subreddit.hot(limit=5)
+hot_dblegends = subreddit.hot(limit=3)
 
 for submission in hot_dblegends:
     if not submission.stickied:     # pinned submissions
-        print(f'{submission.title} Up: {submission.ups} Down: {submission.downs} Visited: {submission.visited}')
+        print(f'{submission.title}\t<<{submission.category}>>\nScore: {submission.score}')
